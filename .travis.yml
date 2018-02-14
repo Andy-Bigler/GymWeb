@@ -1,16 +1,20 @@
 os:
- - linux
+- linux
 
 language: php
 
 php:
- - '7.2'
+- '7.2'
 
 before_script:
- - cp .env.travis .env
- - composer self-update
- - composer install --no-interaction
+- cp .env.travis .env
+- composer self-update
+- composer install --no-interaction
 
 script:
- - php artisan key:generate
- - vendor/bin/phpunit --coverage-text
+- php artisan key:generate
+- vendor/bin/phpunit --coverage-text
+
+notifications:
+  slack:
+    secure: hyaTKEW+bq29qmtXC7t+TPLKVj6VeAy9yi0u59ciszj20gvLcEAgjCI4cyixWgrmv/0uhhsYxzJyPFLiALix8r0gBLC3Q7oMk0DLNYLtfafd1m9/M7LEnZlksyrZKG/+lSTi9nNSyM/I5VpUxNDACn6t+wjr9e1jpVt8x/ZSDACRqGoC3it/jq7Ajrah1DMHz5SMaiWS3yMrzpqt+QGIF6cgTnEbBQF72d6IODqlzF1g/U9cI1PpYL25c4YHqJT9Y5akWMj2X04nUui1H0NJOE0MncHXETTfuQkFPUyFiGIaCLJemMqxEwy35NC/AGytOKKY12Hs7Jxg9vvwjH/uZJbQyML8KjwIR9VVyho0fQR70etthqPHKw9YH8EA4TUPqhbfHLOVcrmFTxHKPI4khc4zAix+G40TF/64HaoJ+PZ3+GGsCRUTQdoeq1hACz6byYzpoomQPxRFH+im4ch5lxL5w0XssSXApsnLNGQvVeL+3sbiKRfNbClXS7SjXMn1k3pOZBJDjFbVbtS2YcPK/iL4tYK7v/eGFcL8DKpn6Mh7uTEKqx5uypX62OYdOXZfHHymZicDozRiZHe10MwIO+MbNQVhaUwdPimA2BJn2HThtIjxgx1sbxrSOt084QGZd/XIaK7SJDygC+5sd3Lvc8XWiuSpqm9z4x3h0o4IcGY=
